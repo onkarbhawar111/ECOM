@@ -35,19 +35,19 @@ public class UserController {
 
 
     @PostMapping
-	public  ResponseEntity<UserResponseDTO> createUser(@RequestBody UserRequestDTO udto){
+	private  ResponseEntity<UserResponseDTO> createUser(@RequestBody UserRequestDTO udto){
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.createUser(udto));
 		
 	}
     
     @GetMapping
-    public ResponseEntity<List<UserResponseDTO>>  getAllUser(){
+    private ResponseEntity<List<UserResponseDTO>>  getAllUser(){
     	return ResponseEntity.ok(service.getAllUser());
     }
     
     
     @DeleteMapping("/{id}")
-    public ResponseEntity<String>  deleteUser(@PathVariable int id){
+    private ResponseEntity<String>  deleteUser(@PathVariable int id){
     	
     	service.deleteUser(id);
     	
@@ -56,7 +56,7 @@ public class UserController {
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<UserResponseDTO> updateUser(@PathVariable int id,@RequestBody UserRequestDTO rdto){
+    private ResponseEntity<UserResponseDTO> updateUser(@PathVariable int id,@RequestBody UserRequestDTO rdto){
     	
     	
     	

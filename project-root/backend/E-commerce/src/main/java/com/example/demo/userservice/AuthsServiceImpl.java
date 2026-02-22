@@ -29,7 +29,7 @@ public class AuthsServiceImpl implements AuthService{
 		Euser user=new Euser();
 		user.setEmail(dto.getEmail());
 		user.setPassword(passwordEncoder.encode(dto.getPassword()));
-		
+		repository.save(user);
 		//user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return "User Register Successfully";
 	}
